@@ -17,3 +17,4 @@ PyCharm IDE 的使用指南和常用功能
  Python 常见数据结构（list、set、dict、namedtuple 等）的操作
  Python 函数式编程基础及应用：lambda 函数的编写、如何通过装饰器优雅地修改函数的行为
 R 的简单介绍：环境搭建、控制循环、调用函数
+测试
