@@ -1,20 +1,59 @@
-#第一章：Python /R 基础
-教学目标
-复习 Python 基础语法
-对比 Python 学习 R 的简易语法
-学会撰写 Python 风格代码
-掌握 Python 内置数据结构
-难点
-如何利用 Python 类当中的内置函数提升代码撰写的效率
-如何熟练操作 Python 常见的数据结构
-如何利用装饰器修改函数的表现
-详细内
- Python/R 开发环境的搭建
-Jupyter Notebook 使用基本指南、快捷键和魔法函数
-PyCharm IDE 的使用指南和常用功能
- Python 面向过程和面对象的基本概念回顾
-深入了解 Python 的对象：使用 Python  Object 的内置函数实现优雅有效的编程
- Python 常见数据结构（list、set、dict、namedtuple 等）的操作
- Python 函数式编程基础及应用：lambda 函数的编写、如何通过装饰器优雅地修改函数的行为
-R 的简单介绍：环境搭建、控制循环、调用函数
-测试
+	1. 读源码
+		a. 拿过来就跑：优先用TensorFlow2，十分钟调不通就提issue。
+		b. 学习：Pytorch（代码 vs 论文细节）
+		c. 复现｜加速：Jax｜Flax ， 模仿PyTorch+论文
+		d. 以下是注意：
+		e. 大部分开源代码有错误，有时有严重错误:TF2 Sparsemax 是错的，PyTorch ghost batch normalization 是错的
+		f. 很多知名代码库有很多很好的写法，模仿时候可以去学习
+		g. 论文当中有很多错误!AdamW 和 RAdam 论文都是错的，尤其是不同版本结 果还经常不一样 
+	2. 读论文
+		a. 摘要
+		b. 数据集：注意看是否典型，是否比较baseline有问题，数据是否有特殊性。
+		c. 方法：看结构、看故意藏起来的trick，不一定要看数学，注意看不同版本的区别
+		d. 对着代码看实现细节（一定要看官方）
+	3. 课程准备
+		a. 双系统（ubuntu 18.04）生产环境（CentOS 7.x）
+		b. 云主机 Colab
+		c. 铅笔&橡皮
+		d. 学生账户：JetBrain 全家桶(https://www.jetbrains.com/) 
+	4. 环境搭建：两种
+		a. Colab
+			环境现成，便宜，快，容易复现
+			需要翻墙
+		b. 自己搭环境
+			别人不方便复现
+	5. 本次训练营使用Colab
+		a. 基本的GCC开发环境
+			brew install gcc@4.9
+			gcc-4.8 以上版本
+			gcc --version
+			xcode-select --install (xcrun: error: invalid active developer path)
+			???
+		b. Anaconda/Miniconda
+			下载安装包
+			环境变量
+		c. R（Conda环境）
+			不要用package manager安装Rstudio
+			conda install r-essentials r-base    直接用命令安装，这样可以在jupyter notebook使用R和Python
+		d. Docker
+			post installation step
+			docker镜像：docker pull image:tag
+			如果需要GPU，则需要安装Nvidia Docker
+			docker run -it -rm image:tag
+				-it 表示采用交替式的运行
+				-rm 表示运行完后删除container，节省硬盘资源。
+				-v 表示将本地文件映射到docker中
+				-p 将端口进行映射，使用jupyter notebook时使用。
+		e. CUDA
+			不看了，没兴趣，先用colab@@
+	6. 开发工具
+		a. PyCharm
+			优点：
+				代码补全、重命名
+				Debug
+				提取函数（refactor --> extract_method）
+				自动实现PEP8
+		b.  Jupyter Notebook
+			优点：
+				交互式运行，避免重复读区大量数据
+Jupyter有很多很方便的魔法函数：
